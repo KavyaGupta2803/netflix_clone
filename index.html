@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India - Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyA4D2b8qU7zlvYdhaNlQrT7w4jnND__t-s",
+            authDomain: "netflix-clone-21f6c.firebaseapp.com",
+            projectId: "netflix-clone-21f6c",
+            storageBucket: "netflix-clone-21f6c.appspot.com",
+            messagingSenderId: "160976340944",
+            appId: "1:160976340944:web:a6f3296fc3574bab4cdbd5"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        auth.languageCode = "en";
+        const provider = new GoogleAuthProvider();
+        const googleLogin = document.getElementById("btn1");
+
+        googleLogin.addEventListener("click", function () {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const user = result.user;
+                    window.location.href = "https://fmovies24.to/home";
+                }).catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.Message;
+                });
+        });
+    </script>
+
+    <div class="main">
+        <nav>
+            <span><img width="53" src="assets/images/logo.svg"></span>
+            <div>
+                <select class="btn" id="language-select" onchange="changeLanguage()">
+                    <option value="English">English</option>
+                    <option value="Hindi">हिंदी</option>
+                </select>
+
+                <button id="btn1" class="btn btn-red-sign">Sign In</button>
+            </div>
+
+        </nav>
+        <div class="content">
+            <span id="cont1" class="cont1">Unlimited movies, TV shows and more</span>
+            <span id="cont2" class="cont2">Watch anywhere. Cancel anytime.</span>
+            <span id="cont3" class="cont3">Ready to watch? Enter your email to create or restart your membership.</span>
+            <form action="#" method="post">
+                <input type="email" placeholder="Email address" required>
+                <button class="btn btn-red" type="submit">Get Started ></button>
+            </form>
+        </div>
+        <!-- <div class="line"></div> -->
+        <div class="box"></div>
+    </div>
+    <div class="first">
+        <div class="text1">
+            <span id="text1" class="txt1">Enjoy on your TV</span>
+            <span id="text2" class="txt2">Watch on smart TVs, PlayStation, Xbox,<br>Chromecast, Apple TV, Blu-ray
+                players and more.</span>
+        </div>
+        <div class="secImg">
+            <img src="assets/images/tv.png">
+            <video src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
+                autoplay loop muted></video>
+        </div>
+        <!-- <div class="line1"></div> -->
+    </div>
+    <div class="second">
+        <div class="secImg">
+            <img src="assets/images/stranger.jpg">
+        </div>
+        <div class="text1">
+            <span id="text3" class="txt1">Download your<br>shows to watch<br>offline</span>
+            <span id="text4" class="txt2">Save your favourites easily and always have<br> something to watch.</span>
+        </div>
+        <!-- <div class="line2"></div> -->
+    </div>
+    <div class="third">
+        <div class="text1">
+            <span id="text5" class="txt1">Watch everywhere</span>
+            <span id="text6" class="txt2">Stream unlimited movies and TV shows on your<br>phone, tablet, laptop, and
+                TV.</span>
+        </div>
+        <div class="secImg">
+            <img src="assets/images/3rd.png">
+            <video src="assets/videos/video1.m4v" autoplay loop muted></video>
+        </div>
+        <!-- <div class="line3"></div> -->
+    </div>
+    <div class="second">
+        <div class="secImg">
+            <img
+                src="https://occ-0-7803-3646.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png?r=54d">
+        </div>
+        <div class="text1">
+            <span id="text7" class="txt1">Create profiles for<br>kids</span>
+            <span id="text8" class="txt2">Send children on adventures with their favourite<br>characters in a space made
+                just for them—free with<br>your membership.</span>
+        </div>
+        <!-- <div class="line4"></div> -->
+    </div>
+    <div class="faq-container">
+        <div class="faq-header">Frequently Asked Questions</div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            What is Netflix?<span>+</span>
+            <div class="faq-answer">Netflix is a streaming service that offers a wide variety of TV shows, movies,
+                anime, documentaries, and more on thousands of internet-connected devices.<br><br>You can watch as much
+                as you want, whenever you want, without a single ad – all for one low monthly price. There's always
+                something new to discover, and new TV shows and movies are added every week!</div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            How much does Netflix cost?<span>+</span>
+            <div class="faq-answer">Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all
+                for one fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            Where can I watch?<span>+</span>
+            <div class="faq-answer">Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the
+                web at netflix.com from your personal computer or on any internet-connected device that offers the
+                Netflix app, including smart TVs, smartphones, tablets, streaming media players and game
+                consoles.<br><br>You can also download your favourite shows with the iOS or Android app. Use downloads
+                to watch while you're on the go and without an internet connection. Take Netflix with you anywhere.
+            </div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            How do I cancel?<span>+</span>
+            <div class="faq-answer">Netflix is flexible. There are no annoying contracts and no commitments. You can
+                easily cancel your account online in two clicks. There are no cancellation fees – start or stop your
+                account anytime.</div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            What can I watch on Netflix?<span>+</span>
+            <div class="faq-answer">Netflix has an extensive library of feature films, documentaries, TV shows, anime,
+                award-winning Netflix .originals, and more. Watch as much as you want, anytime you want.</div>
+        </div>
+        <div class="faq-item" onclick="toggleAnswer(this)">
+            Is Netflix good for kids?<span>+</span>
+            <div class="faq-answer">The Netflix Kids experience is included in your membership to give parents control
+                while kids enjoy family-friendly TV shows and films in their own space.<br><br>
+                Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of
+                content kids can watch and block specific titles you don’t want kids to see.</div>
+        </div>
+        <div class="main2">
+            <div class="content">
+                <span id="cont3" class="cont3">Ready to watch? Enter your email to create or restart your
+                    membership.</span>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Email address" required>
+                    <button class="btn btn-red" type="submit">Get Started ></button>
+                </form>
+            </div>
+            <!-- <div class="line5"></div> -->
+        </div>
+        <footer>
+            <div class="questions">
+                Questions? Call 000-800-919-1694
+            </div>
+            <div class="footer">
+                <div class="footer-item">
+                    <a href="faq">FAQ</a>
+                    <a href="faq">Investor Relations</a>
+                    <a href="faq">Privacy</a>
+                    <a href="faq">Speed Test</a>
+                </div>
+
+                <div class="footer-item">
+                    <a href="faq">Help Centre</a>
+                    <a href="faq">Jobs</a>
+                    <a href="faq">Cookie Preferences</a>
+                    <a href="faq">Legal Notices</a>
+                </div>
+                <div class="footer-item">
+                    <a href="faq">Account</a>
+                    <a href="faq">Ways to Watch</a>
+                    <a href="faq">Corporate Information</a>
+                    <a href="faq">Only on Netflix</a>
+                </div>
+
+                <div class="footer-item">
+                    <a href="faq">Media Centre</a>
+                    <a href="faq">Terms of Use</a>
+                    <a href="faq">Contact Us</a>
+                </div>
+            </div>
+            <div class="questions">
+                Netflix India
+            </div>
+        </footer>
+        <script src="script.js"></script>
+</body>
+
+</html>
