@@ -108,6 +108,7 @@ nav option{
     .content {
         top: 25%;
     }
+<<<<<<< HEAD
     .first{
         width: 120vh;
         margin-left:100px;
@@ -120,6 +121,8 @@ nav option{
         width: 120vh;
         margin-left:100px;
     }
+=======
+>>>>>>> 8ff72599800fc07857a6d7931fcc2e324ad5de76
 }
 
 .btn{
@@ -129,10 +132,7 @@ nav option{
     border:1px solid white;
     color: white;
     border-radius: 4px;
-
-
 }
-
 
 #language-select {
     position: relative; /* Ensure the dropdown is positioned correctly */
@@ -413,6 +413,7 @@ footer .questions {
     border-bottom: 8px solid #232323;
     margin: 0 -21%;
 }
+<<<<<<< HEAD
 
 @media (max-width: 130px) {
     .first {
@@ -429,3 +430,5 @@ footer .questions {
         margin-left: -60%;
     }
 }
+=======
+>>>>>>> 8ff72599800fc07857a6d7931fcc2e324ad5de76
