@@ -20,15 +20,6 @@ body{
     position: relative;
     border-bottom: 8px solid #232323;
 }
-
-
-
-/* @media (min-width: 769px) {
-    .main {
-        background-size: cover;
-    }
-} */
-
 .main .box{
     height: 100vh;
     width: 100%;
@@ -101,15 +92,15 @@ nav option{
     font-size: 19px;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1440px) {
     nav img {
         width: 100px;
     }
     .main {
-        height: 80vh;
+        height: 100vh;
     }
     .main .box {
-        height: 80vh;
+        height: 100vh;
     }
 }
 
@@ -117,15 +108,18 @@ nav option{
     .content {
         top: 25%;
     }
-}
-
-.line {
-    height: 8px;
-    background-color: #232323;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    z-index: 10;
+    .first{
+        width: 120vh;
+        margin-left:100px;
+    }
+    .second{
+        width: 120vh;
+        margin-left:100px;
+    }
+    .third{
+        width: 120vh;
+        margin-left:100px;
+    }
 }
 
 .btn{
@@ -165,7 +159,8 @@ nav option{
 
 @media (max-width: 450px) {
     .main {
-        font-size: 80%;
+        font-size: 0px;
+        width: 230vw;
     }
 }
 
@@ -263,15 +258,6 @@ nav option{
     transform: scale(0.85);
 }
 
-.line1{
-    height: 8px;
-    background-color: #232323;
-    position: absolute;
-    /* bottom: 0; */
-    width: 100%;
-    top: 180%;
-}
-
 .second{
     display: flex;
     justify-content: center;
@@ -288,15 +274,6 @@ nav option{
 
 .second .txt1{
     text-align: start;
-}
-
-.line2{
-    height: 8px;
-    background-color: #232323;
-    position: absolute;
-    /* bottom: 0; */
-    width: 100%;
-    top: 260%;
 }
 
 .third{
@@ -318,24 +295,6 @@ nav option{
     right: 65px;
     width: 434px;
     transform: scale(0.85);
-}
-
-.line3{
-    height: 8px;
-    background-color: #232323;
-    position: absolute;
-    /* bottom: 0; */
-    width: 100%;
-    top: 335%;
-}
-
-.line4{
-    height: 8px;
-    background-color: #232323;
-    position: absolute;
-    /* bottom: 0; */
-    width: 100%;
-    top: 420%;
 }
     
 .faq-container {
@@ -393,16 +352,6 @@ nav option{
     transform: rotate(45deg);
 }
 
-.line5 {
-    height: 8px;
-    background-color: #232323;
-    position: absolute;
-    width: 100%;
-    top: 545%;
-    margin-left: -15%;
-    display: none;
-}
-
 .main2 input{
     padding: 18px 100px 13px 15px;
     font-size: 16px;
@@ -414,34 +363,6 @@ nav option{
     font-family: sans-serif;
 }
 
-/* footer {
-    color: white;
-    max-width: 60vw;
-    margin: auto;
-    padding: 60px;
-}
-
-footer .questions {
-    padding: 34px 0;
-}
-
-
-.footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    color: white;
-}
-
-.footer a {
-    font-size: 14px;
-    color: white;
-}
-
-.footer-item {
-    display: flex;
-    flex-direction: column;
-    gap: 23px;
-} */
 footer {
     color: #b3b3b3;
     max-width: 60vw;
@@ -491,4 +412,20 @@ footer .questions {
     padding: 50px;
     border-bottom: 8px solid #232323;
     margin: 0 -21%;
+}
+
+@media (max-width: 130px) {
+    .first {
+        font-size: 50px;
+    }
+}
+@media (max-width: 750px) {
+    .faq-container{
+        margin-left: 60%;
+        width:60vh;
+    }
+    .main2 .content{
+        width:110vh;
+        margin-left: -60%;
+    }
 }
